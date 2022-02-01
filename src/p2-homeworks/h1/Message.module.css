@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+}
+
+.container img {
+    margin-top: 20px;
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.msg {
+    display: inline-block;
+    font-size: 15pt;
+    color: rgba(255, 255, 255, .7);
+    margin: 2px 0 0 25px;
+}
+
+.name {
+    display: block;
+    font-size: 15pt;
+    color: fuchsia;
+    margin: 15px 0 0 25px;
+}
+
+.time {
+    display:block;
+    font-size: 15pt;
+    line-height: 13pt;
+    color: rgba(39, 221, 130, 0.8);
+    margin: -10px 0 0 250px;
+}
+
+.messages_container {
+    position: relative;
+    height: 80px;
+    width: 325px;
+    background-color: darkslateblue;
+    border-radius: 15px 15px 15px 0;
+}
+
+.messages_container::before {
+    content: "";
+    margin-left: -50px;
+    position: absolute;
+    background-color: transparent;
+    bottom: 0;
+    height: 25px;
+    width: 50px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 25px 0 0 0 darkslateblue;
+}
+
+
