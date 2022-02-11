@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
-import affairs from "./Affairs";
 
 // types
 export type AffairPriorityType = 'low' | 'middle' | 'high'
@@ -29,16 +28,17 @@ export const filterAffairs = (affairs: AffairType[], filter: FilterType): Affair
     if (filter === 'low') return affairs.filter(affairs => affairs.priority === 'low')
     else return affairs
 }
-export const deleteAffair = (affairs: AffairType[], _id: AffairType["_id"]): AffairType[] => {
-    return affairs.filter(affairs => affairs._id !== _id)
+export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => {
+    return affairs.filter(affair => affair._id !== _id)
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: any) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
+
+    const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
     return (
         <div>
