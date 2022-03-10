@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Junior() {
+export function JuniorPlus() {
     return (
         <div>
 
