@@ -1,17 +1,17 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
-import {UserType} from "./HW3";
+import {UserType} from './HW3';
 
 type GreetingContainerPropsType = {
-    users: UserType[] // need to fix any
-    addUserCallback: (name: string) => void // need to fix any
+    users: UserType[]
+    addUserCallback: (name: string) => void
 }
 
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<string>("") // need to fix any
-    const [error, setError] = useState<string>('') // need to fix any
+const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => {
+    const [name, setName] = useState<string>('')
+    const [error, setError] = useState<string>('')
 
-    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.currentTarget.value.trim()
         setName(value)
         if (value && !+(value)) {
@@ -33,7 +33,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         if (charCode === 13 && name) addUser()
     }
 
-    const totalUsers = users.length // need to fix
+    const totalUsers = users.length
 
     return (
         <Greeting
