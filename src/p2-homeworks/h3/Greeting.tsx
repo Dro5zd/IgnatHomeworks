@@ -18,7 +18,7 @@ const Greeting: React.FC<GreetingPropsType> = (
     const inputClass = name ? s.error : error// need to fix with (?:)
 
     return (
-        <div>
+        <div className={s.container}>
             <input
                 value={name}
                 onChange={setNameCallback}

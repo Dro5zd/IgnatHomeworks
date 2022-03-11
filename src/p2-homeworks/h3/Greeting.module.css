@@ -1,5 +1,13 @@
-.someClass {
-
+.container {
+    margin:0 auto;
+    padding: 0.1rem 2rem 2rem;
+    max-width:500px;
+    width: 300px;
+    height: auto;
+    color: white;
+    box-shadow: 0 0 10px #eee;
+    border-radius: 10px;
+    background-color: #30cfd0;
 }
 
 .error {
