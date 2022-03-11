@@ -46,6 +46,10 @@ function HW2() {
             <hr/>
             homeworks 2
             <div className={s.container}>
+                <h1>
+                    'Todo List'
+                    <span>Today I need To :</span>
+                </h1>
                 <Affairs
                     data={filteredAffairs}
                     setFilter={setFilter} deleteAffairCallback={deleteAffairCallback}

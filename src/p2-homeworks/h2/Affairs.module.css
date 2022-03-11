@@ -1,8 +1,10 @@
 .container {
+    margin:4rem auto;
+    padding:2rem 3rem 3rem;
+    max-width:500px;
+
     width: 300px;
     height: 400px;
-    margin: 10px;
-    padding: 20px 45px;
         text-align: center;
         text-transform: uppercase;
         transition: 0.5s;
@@ -12,6 +14,22 @@
         border-radius: 10px;
         display: block;
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.container h1 {
+    /*text-align:center;*/
+    font-weight:normal;
+    font-size:2.6rem;
+    letter-spacing:0.05em;
+    border-bottom:1px solid rgba(255,255,255,.3);
+}
+
+.container h1 span {
+    display:block;
+    font-size:0.8rem;
+    margin-bottom:0.7rem;
+    margin-left:3px;
+    margin-top:0.2rem;
 }
 
 .section{
