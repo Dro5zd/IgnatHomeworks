@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
-import s from "./Affairs.module.css";
+import s from './Affairs.module.css';
 
 // types
 export type AffairPriorityType = 'low' | 'middle' | 'high'
@@ -42,12 +42,12 @@ function HW2() {
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
     return (
-        <div >
+        <div>
             <hr/>
             homeworks 2
             <div className={s.container}>
                 <h1>
-                    'Todo List'
+                    TODO List
                     <span>Today I need To :</span>
                 </h1>
                 <Affairs
@@ -56,6 +56,7 @@ function HW2() {
                 />
             </div>
             <hr/>
+
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeAffairs/>*/}
             <hr/>

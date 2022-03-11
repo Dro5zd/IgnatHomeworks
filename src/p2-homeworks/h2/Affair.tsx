@@ -1,6 +1,7 @@
 import React from 'react'
 import {AffairType} from "./HW2";
 import s from './Affairs.module.css'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 type AffairPropsType = {
     // key не нужно типизировать
@@ -14,9 +15,13 @@ function Affair(props: AffairPropsType) {
     }// need to fix
 
     return (
-        <div className={s.section}>
-           <div className={s.title}>{props.affair.name}</div>
-            <button onClick={deleteCallback} className={s.btn}>X</button>
+        <div className={s.list}>
+           <div className={s.title}>
+               {props.affair.name}
+               <DeleteIcon onClick={deleteCallback} className={s.del_btn}/>
+
+           </div>
+
         </div>
     )
 }
