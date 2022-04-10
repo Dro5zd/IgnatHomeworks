@@ -16,10 +16,10 @@
     margin-bottom: 10px;
 }
 
-/*.superInput:focus{*/
-/*    outline: none;*/
-/*    border: 2px solid #330867;*/
-/*}*/
+.superInput:focus{
+    outline: none;
+    border: 2px solid #330867;
+}
 
 .errorInput {
     /*flex-grow:1;*/
