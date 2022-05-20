@@ -1,36 +1,44 @@
 import React from 'react'
-import s from '../c7-SuperRange/SuperRange.module.css'
-import Slider from '@mui/material/Slider';
-import {Box} from '@mui/material';
+import s from '../c8-SuperDoubleRange/SuperDoubleRange.module.css'
+import SuperRange from '../c7-SuperRange/SuperRange';
 
 type SuperDoubleRangePropsType = {
-    onChangeRange?: (value: number[]) => void
-    // onChangeRange?: (value1: number) => void
-
-    value?: number[]
-    min?: number,
-    max?: number,
-    step?: number,
-    disable?: boolean
+    onChangeRange?: (value: [number, number]) => void
+    value: [number, number]
+    min: number,
+    max: number,
+    setValue1: (n: number) => void
+    setValue2: (n: number) => void
 }
 
-const SuperDoubleRange = (props: SuperDoubleRangePropsType) => {
-    // сделать самому, можно подключать библиотеки
+const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
+    {
+        onChangeRange, value,
+        min, max,
+        ...props
+    }
+) => {
 
-    const handleChange = (event: Event, newValue: number | number[]) => {
-        props.onChangeRange && props.onChangeRange(newValue as [number, number]);
-
-    };
+    const func1 = (n: number) => {
+        if (value[1] <= n) return
+        props.setValue1(n)
+    }
+    const func2 = (n: number) => {
+        if (value[0] >= n) return
+        props.setValue2(n)
+    }
 
     return (
-        <div className={s.container}>
-            <Box sx={{ width: 300 }}>
-            <Slider
-                value={props.value}
-                onChange={handleChange}
-                valueLabelDisplay="auto"
+        <div className={s.double}>
+            <SuperRange value={value[0]}
+                        min={min}
+                        max={max}
+                        onChangeRange={func1}
+                        styleClassNameRange={s.rangePosition}
             />
-            </Box>
+            <SuperRange value={value[1]} min={min} max={max}
+                        onChangeRange={func2}
+            />
         </div>
     )
 }

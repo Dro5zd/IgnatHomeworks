@@ -10,7 +10,7 @@
     padding: 2rem 2rem 2rem;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 500px;
     min-height: 160px;
     color: white;
     box-shadow: 0 0 10px #eee;
@@ -18,8 +18,8 @@
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
-.loadingContainer{
+.valueContainer {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between
 }
 

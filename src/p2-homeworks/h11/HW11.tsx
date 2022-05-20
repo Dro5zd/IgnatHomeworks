@@ -1,35 +1,51 @@
 import React, {useState} from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
-import s from '../h10/H10.module.css';
+import s from './H11.module.css'
 
 function HW11() {
     const [value1, setValue1] = useState(40)
     const [value2, setValue2] = useState(100)
-    const [value, setValue] = React.useState<number[]>([4, 37])
 
+    const onChangeInputRangeHandle = (num: number) => {
+        if (num >= value2) return
+        setValue1(num)
+    }
 
+    const onChangeDoubleInputRangeHandle = (nums: Array<number>) => {
+        setValue1(nums[0])
+        setValue2(nums[1])
+    }
 
     return (
-        <div >
+        <div>
             <hr/>
             homeworks 11
-
-            {/*should work (должно работать)*/}
             <div className={s.container}>
+
                 <div>
-                    <span>{value1}</span>
-                    <SuperRange onChangeRange={setValue1}
+                    <SuperRange
+                        value={value1}
+                        min={0}
+                        max={100}
+                        onChangeRange={onChangeInputRangeHandle}
 
                         // сделать так чтоб value1 изменялось
                     />
                 </div>
-                <div className={s.loadingContainer}>
-                    <span>{value[0]}</span>
-                    <SuperDoubleRange onChangeRange={setValue} value={value}
-                        // сделать так чтоб value1 и value2 изменялось
+                <div>
+                    <div className={s.valueContainer}>
+                        <span>{value1}</span>
+                        <span>{value2}</span>
+                    </div>
+                    <SuperDoubleRange onChangeRange={onChangeDoubleInputRangeHandle}
+                                      value={[value1, value2]}
+                                      setValue1={setValue1}
+                                      setValue2={setValue2}
+                                      min={0}
+                                      max={100}
                     />
-                    <span>{value[1]}</span>
+
                 </div>
             </div>
             <hr/>
