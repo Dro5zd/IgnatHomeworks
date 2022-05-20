@@ -1,5 +1,5 @@
 const initState = {
-    theme: 'dark' || 'red' || 'some'
+    theme: 'some' || 'red' || 'dark'
 };
 
 type initStateType = typeof initState
