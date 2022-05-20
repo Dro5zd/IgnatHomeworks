@@ -22,15 +22,12 @@ function HW11() {
             <hr/>
             homeworks 11
             <div className={s.container}>
-
                 <div>
                     <SuperRange
                         value={value1}
                         min={0}
                         max={100}
                         onChangeRange={onChangeInputRangeHandle}
-
-                        // сделать так чтоб value1 изменялось
                     />
                 </div>
                 <div>
